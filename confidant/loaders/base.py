@@ -9,13 +9,20 @@ class BaseLoader(ABC):
     @abstractmethod
     def load(self) -> Dict[str, str]:
         """
-        Load settings from source.
-        Must be implemented by all loaders.
+        Loads settings from a source.
+        
+        Returns:
+            A dictionary mapping setting names to their string values.
+        
+        This method must be implemented by all subclasses to retrieve settings from
+        their respective sources.
         """
         pass
 
     def info(self) -> str:
         """
-        Optional: Return source info (file path, URL, etc.)
+        Returns a string identifying the source of the loader.
+        
+        By default, this returns the class name, but subclasses may override it to provide more specific source information such as a file path or URL.
         """
         return self.__class__.__name__
