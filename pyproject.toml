@@ -5,6 +5,10 @@ description = ""
 authors = ["Tanmay patil <tanmaypatil3151@gmail.com>"]
 readme = "README.md"
 
+[tool.poetry.scripts]
+confidant = "confidant.cli.main:app"
+
+
 [tool.poetry.dependencies]
 python = "^3.10"
 pydantic = "^2.11.3"
